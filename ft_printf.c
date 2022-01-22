@@ -62,7 +62,11 @@ int	ft_parse_flags(const char *str, int i, va_list args, t_flags *flags)
 		if (ft_isdigit(str[i]))
 			*flags = ft_flag_digit(str[i], *flags);
 		if (ft_isspec(str[i]))
+		{
+			flags->spec = str[i];
+		//	printf("\nflags.spec = %c\n", (char)flags->spec);
 			break ;
+		}
 		i++;
 	}
 	return (i);
@@ -71,17 +75,23 @@ int	ft_parse_flags(const char *str, int i, va_list args, t_flags *flags)
 int	ft_parse(char *str, va_list args)
 {
 	int		i;
+	int		x;
 	int		count;
 	t_flags	flags;
 
 	i = 0;
+	x = 0;
 	count = 0;
 	while (str[i])
 	{
 		flags = ft_flags_init();
 		if (str[i] == '%' && str[i + 1] != '\0')
 		{
-			i = ft_parse_flags(str, i + 1, args, &flags);
+			x = ft_parse_flags(str, i + 1, args, &flags);
+			if (flags.spec != 0)
+				i = x;
+			else
+				flags = ft_flags_init();
 			if (str[i] != '\0' && ft_isspec(str[i]))
 				count += ft_print_arg(str[i], args, flags);
 			else if (str[i] != '\0')
