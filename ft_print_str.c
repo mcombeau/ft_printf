@@ -27,6 +27,8 @@ static int	ft_print_string(const char *str, t_flags flags)
 	return (count);
 }
 
+#if defined(__linux__) || defined(__gnu_linux__)
+
 int	ft_print_str(const char *str, t_flags flags)
 {
 	int	count;
@@ -51,6 +53,29 @@ int	ft_print_str(const char *str, t_flags flags)
 		count += ft_print_string(str, flags);
 	return (count);
 }
+
+#else
+
+int	ft_print_str(const char *str, t_flags flags)
+{
+	int	count;
+
+	count = 0;
+	if (str == NULL)
+		str = "(null)";
+	if (flags.precision >= 0 && (size_t)flags.precision > ft_strlen(str))
+		flags.precision = ft_strlen(str);
+	if (flags.left == 1)
+		count += ft_print_string(str, flags);
+	if (flags.precision >= 0)
+		count += ft_pad_width(flags.width, flags.precision, 0);
+	else
+		count += ft_pad_width(flags.width, ft_strlen(str), 0);
+	if (flags.left == 0)
+		count += ft_print_string(str, flags);
+	return (count);
+}
+#endif
 
 int	ft_print_s_pre(const char *str, int precision)
 {
