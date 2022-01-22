@@ -48,7 +48,7 @@ int		ft_flag_precision(const char *str, int pos,
 
 /* ---------- PRINTF -------------------- */
 int		ft_printf(const char *format, ...);
-int		ft_print_arg(char c, va_list args, t_flags flags);
+int		ft_print_arg(char type, va_list args, t_flags flags);
 
 /* ---------- PRINT SPECIFIERS ---------- */
 // c
@@ -83,6 +83,7 @@ char	*ft_printf_xtoa(unsigned long int nb, int is_upper);
 int		ft_unint_len(unsigned int n);
 int		ft_hex_len(unsigned int n);
 int		ft_ptr_len(unsigned long int n);
+int		ft_istype(int c);
 int		ft_isspec(int c);
 int		ft_isflag(int c);
 
