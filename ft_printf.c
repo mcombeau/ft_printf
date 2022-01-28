@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:21:32 by mcombeau          #+#    #+#             */
-/*   Updated: 2021/12/17 16:22:15 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:31:12 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,11 @@ int	ft_printf(const char *format, ...)
 	int			count;
 	char		*str;
 
+	if (!format || *format == '\0')
+		return (0);
 	str = ft_strdup(format);
+	if (!str || *str == '\0')
+		return (0);
 	count = 0;
 	va_start(args, format);
 	count = ft_parse(str, args);

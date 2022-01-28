@@ -71,6 +71,8 @@ int	ft_print_hex(unsigned int n, int is_upper, t_flags flags)
 		return (count);
 	}
 	nbstr = ft_printf_xtoa(n, is_upper);
+	if (!nbstr)
+		return (0);
 	count += ft_print_hexadec(nbstr, n, is_upper, flags);
 	free(nbstr);
 	return (count);

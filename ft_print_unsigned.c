@@ -57,6 +57,8 @@ int	ft_print_unsigned(unsigned n, t_flags flags)
 		return (count);
 	}
 	nbstr = ft_printf_utoa(n);
+	if (!nbstr)
+		return (0);
 	count += ft_print_unint(nbstr, flags);
 	free(nbstr);
 	return (count);

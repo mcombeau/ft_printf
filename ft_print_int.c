@@ -99,6 +99,8 @@ int	ft_print_int(int n, t_flags flags)
 		return (count);
 	}
 	nbstr = ft_printf_itoa(nb);
+	if (!nbstr)
+		return (0);
 	count += ft_print_integer(nbstr, n, flags);
 	free(nbstr);
 	return (count);
