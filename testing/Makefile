@@ -5,7 +5,7 @@ all:	$(NAME)
 $(NAME):
 	$(MAKE) -C .. all
 	cp ../libftprintf.a $(NAME)
-	gcc -Werror -Wextra -Wall main.c $(NAME)
+	gcc main.c $(NAME)
 
 clean:
 	$(MAKE) -C .. clean

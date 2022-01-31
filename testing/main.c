@@ -551,41 +551,53 @@ void	test_extra()
 
 void	test_invalid_spec(void)
 {
-	printf("\n----------- TEST: INVALID TYPE -----------\n\n");
-	ft_printf("  Ft\t:\tInvalid: [%%o] = [%o]\n");
-	ft_printf("  Ft\t:\tInvalid: [%%Z] = [%Z]\n");
-	ft_printf("  Ft\t:\tInvalid: [%%0] = [%0]\n");
-	ft_printf("  Ft\t:\tInvalid: [%%14k] = [%14k]\n");
-	ft_printf("  Ft\t:\tInvalid: [%%lala] = [%lala]\n");
+	int x, y;
 
-	printf("\n----------- TEST: WRONG SPEC FOR TYPE -----------\n\n");
-	ft_printf("  Ft\t:\tInvalid: %0-20d.\n", "Hello");
+	x = 0;
+	y = 0;
+	printf("\n----------- TEST: INVALID TYPE -----------\n\n");
+
+	x = printf("  Or\t:\tInvalid: [%%w] = [%w]\n");
+	y = ft_printf("  Ft\t:\tInvalid: [%%w] = [%w]\n");
+	printf("Printf = %d, ft_printf = %d\n\n", x, y);
+
+	x = printf("  Or\t:\tInvalid: [%%0] = [%0]\n");
+	y = ft_printf("  Ft\t:\tInvalid: [%%0] = [%0]\n");
+	printf("Printf = %d, ft_printf = %d\n\n", x, y);
+
+	x = printf("  Or\t:\tInvalid: [%%14k] = [%14k]\n");
+	y = ft_printf("  Ft\t:\tInvalid: [%%14k] = [%14k]\n");
+	printf("Printf = %d, ft_printf = %d\n\n", x, y);
+
+	x = printf("  Or\t:\tInvalid: [%%wawa] = [%wawa]\n");
+	y = ft_printf("  Ft\t:\tInvalid: [%%wawa] = [%wawa]\n");
+	printf("Printf = %d, ft_printf = %d\n\n", x, y);
 }
 
 int	main(void)
 {
-//	printf("\n\n========== MANDATORY TESTS ========\n\n");
-//	test_simple();
-//	test_percent();
-//	test_c();
-//	test_s();
-//	test_d();
-//	test_i();
-//	test_x();
-//	test_X();
-//	test_u();
-//	test_p();
-//	test_all();
+	printf("\n\n========== MANDATORY TESTS ========\n\n");
+	test_simple();
+	test_percent();
+	test_c();
+	test_s();
+	test_d();
+	test_i();
+	test_x();
+	test_X();
+	test_u();
+	test_p();
+	test_all();
 
-//	printf("\n\n========== BONUS TESTS ============\n\n");
-//	test_bonus_char();
-//	test_bonus_str();
-//	test_bonus_hex();
-//	test_bonus_unsigned();
-//	test_bonus_int();
-//	test_bonus_ptr();
-//	test_bonus_precision();
-//	test_extra();
+	printf("\n\n========== BONUS TESTS ============\n\n");
+	test_bonus_char();
+	test_bonus_str();
+	test_bonus_hex();
+	test_bonus_unsigned();
+	test_bonus_int();
+	test_bonus_ptr();
+	test_bonus_precision();
+	test_extra();
 	test_invalid_spec();
 
 	return (0);
