@@ -569,6 +569,10 @@ void	test_invalid_spec(void)
 	y = ft_printf("  Ft\t:\tInvalid: [%%14k] = [%14k]\n");
 	printf("Printf = %d, ft_printf = %d\n\n", x, y);
 
+	x = printf("  Or\t:\tInvalid: [%%-14k] = [%-14k]\n");
+	y = ft_printf("  Ft\t:\tInvalid: [%%-14k] = [%-14k]\n");
+	printf("Printf = %d, ft_printf = %d\n\n", x, y);
+
 	x = printf("  Or\t:\tInvalid: [%%wawa] = [%wawa]\n");
 	y = ft_printf("  Ft\t:\tInvalid: [%%wawa] = [%wawa]\n");
 	printf("Printf = %d, ft_printf = %d\n\n", x, y);
