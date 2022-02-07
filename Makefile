@@ -27,17 +27,17 @@ $(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJS)
 					$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 $(LIBFT):
-					$(MAKE) -C $(LIBFT_PATH) all
+					make -C $(LIBFT_PATH) all
 
 $(OBJ_DIR):
 					mkdir -p $(OBJ_DIR)
 
 clean:
-					$(MAKE) -C $(LIBFT_PATH) clean
+					make -C $(LIBFT_PATH) clean
 					$(RM) $(OBJ_DIR)
 
 fclean:				clean
-					$(MAKE) -C $(LIBFT_PATH) fclean
+					make -C $(LIBFT_PATH) fclean
 					$(RM) $(NAME)
 
 re:					fclean all
