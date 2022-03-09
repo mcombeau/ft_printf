@@ -6,8 +6,7 @@ For the ft_printf project of the 42 school cursus, we must recreate the famous C
 - Supported options: - 0 . * width
 
 ## Status
-
-[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/mcombeau/ft_printf)](https://github.com/JaeSeoKim/badge42)
+Finished: 2022-02-07. Grade: 125/100.
 
 ## Usage
 
