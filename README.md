@@ -6,6 +6,8 @@
 
 For the ft_printf project of the 42 school cursus, we must recreate the famous C library printf function. This project teaches us about variadic arguments as well as structures if we plan to implement printf's extra flags.
 
+> This project has been archived in the state it was in at the time of evaluation.
+
 - Supported conversions: %, c, s, p, i, d, u, x, X
 - Supported flags: # + (space)
 - Supported options: - 0 . * width
